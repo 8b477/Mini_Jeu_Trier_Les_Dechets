@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Projet: Serious game tri sélectif</title>
+</head>
+<body>
+
+
+    <h1>Bienvenue sur ton jeu favoris !</h1>
+     <!-- MAIN DIV -->
+    <div id="container">
+
+        <!-- Screen UP -->
+        <div data-index = "1" id="garbageYellow" class ="trash"></div>
+        <div data-index = "2" id="garbageGreen" class ="trash"></div>
+        <div data-index = "3" id="garbageBlue"  class ="trash"></div>
+        <div data-index = "4" id="garbageMaron" class ="trash"></div>
+        <!-- Screen DOWN -->
+        <div id="downScreen">
+
+            <div id="pop" draggable="true">
+
+            </div>
+
+            <div>
+                <p id="responce"></p>
+            </div>
+
+        </div>
+    <button type="button" id="go">GO !!</button>
+        <button type="button" id="valide">Valide</button>
+    </div>
+<p>Click sur le bord de l'image pour la déplacer dans le sens que tu veux !</p>
+
+
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+h1{
+    padding-top: 2.5rem;
+    text-align: center;
+}
+/*
+--------------------------------SCREEN
+ */
+#container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 3% auto;
+    border: solid black 4px;
+    width: 60%;
+}
+
+
+#downScreen{
+    border: solid 2px black;
+    height: 200px;
+    width: 100%;
+}
+/*
+---------------------------------TRASH
+ */
+.trash{
+    height: 300px;
+    width: 180px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#garbageYellow{
+    background-color: #E0D42B;
+}
+
+#garbageGreen{
+    background-color: #0B2E13;
+}
+
+#garbageBlue{
+    background-color: #16193D;
+}
+
+#garbageMaron{
+    background-color: #69471E;
+}
+
+#pop{
+    background-color: burlywood;
+    width: 20%;
+    height: 100%;
+}
+/*
+------------------------------POP TRASH
+*/
+
+p{
+    text-align: center;
+}
+
+.invisible{
+    visibility: hidden;
+}
