@@ -10,17 +10,17 @@ let btnValide = document.getElementById('valide');
 
 //table with detritus picture
 const detritus = [
-    img0 = ["images/déchetIndustriel.png"],
-    img1 = ["images/déchetMénage.png"],
-    img2 = ["images/déchetToxic.png"],
-    img3 = ["images/dechetsVege.jpg"],
+    img0 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/d%C3%A9chetIndustriel.png"],
+    img1 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/d%C3%A9chetM%C3%A9nage.png"],
+    img2 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/d%C3%A9chetToxic.png"],
+    img3 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/dechetsVege.jpg"],
     ]
-// tenter de stocker une valeur de tableu dans une poubelle
+// create table
 
-garbageYellow = detritus[0][0];
-
-
-
+garbageYellow = [];
+garbageGreen = [];
+garbageBlue = [];
+garbagehMaron = [];
 
 
 let newImg = document.createElement('img');
@@ -37,25 +37,52 @@ btnGo.addEventListener('click', function (){
     console.log(newImg)
 })
 
-//faire en sorte de pouvoir bouger le déchet qui a pop grace au clic sur les coté
-
-window.addEventListener('mouseup', function (e){
-    if(e.target.id === newImg.id){
-        newImg.style.position = 'absolute';
-        newImg.style.top = e.pageY + "px";
-        newImg.style.left = e.pageX + "px";
-        newImg.style.transform = "translate(-50%, -50%)";
-    }
-})
-
 // comparé si le déchet est au bonne endroit avc l'event du btnValide
 
 btnValide.addEventListener('click', function (e){
-    if (newImg === newImg){
-        console.log("ok")
+    if (garbageYellow.length < 1){
+        garbageYellow.push(newImg.src);
+
+        if(garbageYellow.includes(detritus[0][0]) === true){
+
+           alert("win poubelle jaune")
+        }
+        else{
+            alert("Loose");
+        }
     }
-    else{
-        console.log("pas ok")
+    else if(garbageGreen.length < 1){
+        garbageGreen.push(newImg.src);
+
+
+        if(garbageGreen.includes(detritus[1][0] === true)){
+            alert("poubelle verte win")
+        }
+        else{
+            alert("Loose");
+        }
+    }
+    else if(garbageBlue.length < 1){
+        garbageBlue.push(newImg.src);
+
+
+        if(garbageBlue.includes(detritus[2][0] === true)){
+            alert("poubelle bleu win")
+        }
+        else{
+            alert("Loose");
+        }
+    }
+    else if(garbagehMaron.length < 1){
+        garbagehMaron.push(newImg.src);
+
+
+        if(garbagehMaron.includes(detritus[3][0] === true)){
+            alert("poubelle maron win")
+        }
+        else{
+            alert("Loose");
+        }
     }
 })
 
@@ -77,3 +104,18 @@ for(const clean of allTrash){
         this.append(newImg);
     })
 }
+
+
+//faire en sorte de pouvoir bouger le déchet qui a pop grace au clic sur les coté
+/*
+
+window.addEventListener('mouseup', function (e){
+    if(e.target.id === newImg.id){
+        newImg.style.position = 'absolute';
+        newImg.style.top = e.pageY + "px";
+        newImg.style.left = e.pageX + "px";
+        newImg.style.transform = "translate(-50%, -50%)";
+    }
+})
+
+ */
