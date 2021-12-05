@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital@0;1&display=swap" rel="stylesheet">
@@ -17,9 +18,22 @@
 
         <!-- Screen UP -->
         <div data-index = "1" id="garbageYellow" class ="trash"></div>
+
+
         <div data-index = "2" id="garbageGreen" class ="trash"></div>
+
+
         <div data-index = "3" id="garbageBlue"  class ="trash"></div>
+
+
         <div data-index = "4" id="garbageMaron" class ="trash"></div>
+
+        <div id="divBtn">
+            <button type="button" id="btnGarbageYellow">Jaune</button>
+            <button type="button" id="btnGarbageGreen">Vert</button>
+            <button type="button" id="btnGarbageBlue">Blue</button>
+            <button type="button" id="btnGarbageMaron">Maron</button>
+        </div>
         <!-- Screen DOWN -->
         <div id="downScreen">
 
@@ -27,17 +41,22 @@
 
             </div>
 
-            <div>
+            <div id="responceDiv">
                 <p id="responce"></p>
             </div>
 
         </div>
-    <button type="button" id="go">GO !!</button>
-        <button type="button" id="valide">Valide</button>
     </div>
-<p>Click sur le bord de l'image pour la déplacer dans le sens que tu veux !</p>
+    <div>
+        <p><span id="countWin">Score: 0 </span><span id="countLoose">Vie: 5</span></p>
+    </div>
+    <button type="button" id="go">GO !!</button>
+    <br>
+    <button type="button" id="recommence"><a href="./index.html">Recommence !</a></button>
 
+    <script src="https://kit.fontawesome.com/f1f5e8e4db.js" crossorigin="anonymous"></script>
 
     <script src="./app.js"></script>
+
 </body>
 </html>
