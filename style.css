@@ -174,6 +174,7 @@ p{
     margin-left: 46%;
 }
 
+
 #go:hover{
     transform: scale(1.3);
     transition-delay: 0.03s;
@@ -181,15 +182,18 @@ p{
     border-radius: 15px;
 }
 
+
 span{
     padding-right: 2%;
     padding-bottom: 2%;
     font-size: 5rem;
 }
 
+
 #countLoose{
     color: red;
 }
+
 
 #countWin{
     color: blue;
@@ -212,15 +216,21 @@ a{
     text-decoration-line: none;
 }
 
-
 #responceDiv{
     color: #560505;
     font-size: 3.2rem;
-    border: dashed 1px purple;
 }
 /*
 ------------------------------@media
 */
+
+@media screen and (max-width: 1380px){
+    #responceDiv{
+        color: #560505;
+        font-size: 2rem;
+    }
+}
+
 
 @media screen and (max-width: 1220px){
     .trash{
@@ -229,6 +239,7 @@ a{
         margin-top: 2%;
         margin-bottom: 2%;
     }
+
 }
 
 @media screen and (max-width: 930px){
@@ -240,7 +251,7 @@ a{
     }
    #downScreen{
        border: solid 2px black;
-       height: 143px;
+       height: 400px;
        width: 100%;
        background-color: gray;
    }

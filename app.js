@@ -7,7 +7,7 @@ let btnGreen = document.getElementById('btnGarbageGreen');
 let garbageBlue = document.getElementById('garbageBlue');
 let btnBlue = document.getElementById('btnGarbageBlue');
 
-let garbagehMaron = document.getElementById('garbageMaron');
+let garbageMaron = document.getElementById('garbageMaron');
 let btnMaron = document.getElementById('btnGarbageMaron');
 
 let allTrash = document.querySelectorAll('.trash');
@@ -30,22 +30,22 @@ let countLoose = 5;
 
 //table with detritus picture
 const detritus = [
-    img0 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/bi%C3%A8re.png"],
-    img1 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/bocal.jpg"],
-    img2 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/bouteilleDeLait.jpg"],
-    img3 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/cannette.jpg"],
-    img4 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/couche.jpg"],
-    img5 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/yaourt.jpg"],
-    img6 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/gelDouche.jpg"],
-    img7 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/journaux.jpg"],
-    img8 = ["http://localhost:63342/Projet-Serious-game-tri-s-lectif/images/magasine.jpg"],
+    img0 = ["./images/bière.png"],
+    img1 = ["./images/bocal.jpg"],
+    img2 = ["./images/bouteilleDeLait.jpg"],
+    img3 = ["./images/cannette.jpg"],
+    img4 = ["./images/couche.jpg"],
+    img5 = ["./images/gelDouche.jpg"],
+    img6 = ["./images/journaux.jpg"],
+    img7 = ["./images/magasine.jpg"],
+    img8 = ["./images/yaourt.jpg"],
     ]
 
 // create table
 garbageYellow = [];
 garbageGreen = [];
 garbageBlue = [];
-garbagehMaron = [];
+garbageMaron = [];
 
 
 //invokes function create detritus
@@ -54,7 +54,6 @@ btnGo.addEventListener('click', function (){
     let randy = Math.floor(Math.random() * detritus.length);
     pop.appendChild(newImg);
     newImg.src = detritus[randy];
-    //newImg.id = randy;
     newImg.style.height = "140px";
     newImg.style.width = "100px";
     reset();
@@ -64,13 +63,13 @@ btnGo.addEventListener('click', function (){
 function reset(){
     let randy = Math.floor(Math.random() * detritus.length);
     pop.appendChild(newImg);
-    newImg.src = detritus[randy];
+    newImg.src = detritus[randy][0];
     newImg.style.height = "140px";
     newImg.style.width = "100px";
     garbageYellow = [];
     garbageGreen = [];
     garbageBlue = [];
-    garbagehMaron = [];
+    garbageMaron = [];
     newImg.style.left = "";
     newImg.style.top = "";
     newImg.style.opacity = "";
@@ -79,14 +78,14 @@ function reset(){
 // compare if the waste is in the right place Yellow garbage
 
 btnYellow.addEventListener('click', function (){
-    if (garbageYellow.length < 3){
+    if (garbageYellow.length < 1){
         garbageYellow.push(newImg.src);
         answerd.innerHTML = "";
-        if(garbageYellow.includes(detritus[2][0]) === true
-            || garbageYellow.includes(detritus[3][0]) === true
-            || garbageYellow.includes(detritus[6][0]) === true){
+        if(garbageYellow[0].slice(-12) === "cannette.jpg"
+            || garbageYellow[0].slice(-19) === "bouteilleDeLait.jpg"
+            || garbageYellow[0].slice(-13) === "gelDouche.jpg"){
 
-           alert("win poubelle jaune + 1pont !!")
+           alert("win poubelle jaune + 1point !!")
             countWin++;
             spanWin.innerHTML = "Score " + countWin;
             reset();
@@ -116,8 +115,8 @@ btnGreen.addEventListener('click', function () {
     if (garbageGreen.length < 2) {
         garbageGreen.push(newImg.src);
         answerd.innerHTML = "";
-        if (garbageGreen.includes(detritus[0][0]) === true
-            || garbageGreen.includes(detritus[1][0]) === true) {
+        if (garbageGreen[0].slice(-14) === "bi%C3%A8re.png"
+           || garbageGreen[0].slice(-9) === "bocal.jpg") {
             alert("poubelle verte win + 1point !!")
             reset();
             countWin++;
@@ -151,8 +150,8 @@ btnBlue.addEventListener('click', function () {
 if(garbageBlue.length < 2){
     garbageBlue.push(newImg.src);
     answerd.innerHTML = "";
-    if(garbageBlue.includes(detritus[7][0]) === true
-        || garbageBlue.includes(detritus[8][0]) === true){
+    if(garbageBlue[0].slice(-12) === "journaux.jpg"
+        || garbageBlue[0].slice(-12) === "magasine.jpg"){
         alert("poubelle bleu win + 1point !!")
         reset();
         countWin++;
@@ -181,11 +180,11 @@ if(garbageBlue.length < 2){
 })
 // compare if the waste is in the right place Brown garbage
 btnMaron.addEventListener('click', function () {
-if(garbagehMaron.length < 2){
-    garbagehMaron.push(newImg.src);
+if(garbageMaron.length < 2){
+    garbageMaron.push(newImg.src);
     answerd.innerHTML = "";
-    if(garbagehMaron.includes(detritus[4][0])  === true
-        || garbagehMaron.includes(detritus[5][0])  === true){
+    if(garbageMaron[0].slice(-10) === "yaourt.jpg"
+        || garbageMaron[0].slice(-10) === "couche.jpg"){
         alert("poubelle brune win + 1point !!");
         reset();
         countWin++;
